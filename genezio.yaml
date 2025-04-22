@@ -8,7 +8,8 @@ backend:
     runtime: nodejs20.x
   scripts:
     deploy:
-      - npm start
+      - npm install
+      - npm run build
     local:
       - npm ci
       - npm run build
