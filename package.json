@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "node --import=tsx --watch --env-file=.env src/index.ts",
-    "build": "tsc",
+    "build": "tsc && cpy src/public/index.html dist/",
     "start": "node dist/index.js",
     "db:generate": "drizzle-kit generate",
     "db:migrate": "drizzle-kit migrate",
@@ -15,7 +15,6 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": "",
   "dependencies": {
     "bcryptjs": "^3.0.2",
     "drizzle-orm": "^0.42.0",
@@ -35,8 +34,18 @@
     "@types/pg": "^8.11.13",
     "@types/swagger-jsdoc": "^6.0.4",
     "@types/swagger-ui-express": "^4.1.8",
+    "cpy-cli": "^5.0.0",
     "drizzle-kit": "^0.31.0",
     "tsx": "^4.19.3",
     "typescript": "^5.8.3"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Copstud3/ecommerce-api.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Copstud3/ecommerce-api/issues"
+  },
+  "homepage": "https://github.com/Copstud3/ecommerce-api#readme",
+  "description": ""
 }

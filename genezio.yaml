@@ -4,7 +4,7 @@ yamlVersion: 2
 backend:
   path: .
   language:
-    name: typescript
+    name: ts
     runtime: nodejs20.x
   scripts:
     deploy:
@@ -16,7 +16,7 @@ backend:
   functions:
     - name: express
       type: httpServer
-      entry: dist/index.js
+      entry: dist/src/index.js
       path: .
   files:
     - package.json
@@ -24,7 +24,6 @@ backend:
     - tsconfig.json
     - src/
     - public/
-    - views/
     - drizzle.config.ts
     - drizzle/
 services:

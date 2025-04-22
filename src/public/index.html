@@ -10,17 +10,31 @@
         body {
             font-family: 'Inter';
             text-align: center;
-            padding: 20px;
+            height: 100%;
         }
 
         h1 {
             font-weight: bold;
             font-size: 20px;
-            margin-bottom: 10px;
+            padding-top: 10%;
+        }
+        footer{
+            width: 100%;
+            position: relative;
+            bottom: -700px;
+            font-size: 20px;
+        }
+
+        @media screen and (min-width: 768px) {
+           footer{
+            bottom: -100px;
+           } 
         }
     </style>
     <h1>Welcome to the E-commerce API</h1>
     <p>Explore our products and users endpoints.</p>
     <a href="/docs">View API Documentation</a>
+
+    <footer>Made by <a href="https://x.com/copstud3" target="_blank">Chris</a></footer>
 </body>
 </html>
