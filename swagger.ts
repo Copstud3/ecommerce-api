@@ -16,7 +16,7 @@ const options: swaggerJsdoc.Options = {
             url: "{protocol}://{host}",
             description: "Current server",
             protocol: { default: "https" },
-              host: { default: "8dbeab65-bee0-4c28-a005-e78844e02891.us-east-1.cloud.genez.io/" },
+              host: { default: "08bc7119-064b-443d-af0f-fe48f7a05685.us-east-1.cloud.genez.io//" },
           },
           { url: "http://localhost:3000", description: "Local development server" },
     ],
