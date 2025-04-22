@@ -1,24 +1,33 @@
-backend:
-    functions:
-        - entry: dist/src/index.js
-          name: express
-          path: .
-          type: httpServer
-    language:
-        name: js
-        runtime: nodejs20.x
-    path: .
-    scripts:
-        deploy:
-            - npm install
-            - npm run build
-        local:
-            - npm install
-            - npm run build
 name: ecommerce-api
 region: us-east-1
-services:
-    databases:
-        - name: my-postgres-db
-          type: postgres-neon
 yamlVersion: 2
+backend:
+  path: .
+  language:
+    name: typescript
+    runtime: nodejs20.x
+  scripts:
+    deploy:
+      - npm ci
+      - npm run build
+    local:
+      - npm ci
+      - npm run build
+  functions:
+    - name: express
+      type: httpServer
+      entry: dist/index.js
+      path: .
+  files:
+    - package.json
+    - package-lock.json
+    - tsconfig.json
+    - src/
+    - public/
+    - views/
+    - drizzle.config.ts
+    - drizzle/
+services:
+  databases:
+    - name: my-postgres-db
+      type: postgres-neon
