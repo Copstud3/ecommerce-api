@@ -1,20 +1,13 @@
-name: ecommerce-api
-region: us-east-1
-yamlVersion: 2
-services:
-    databases:
-        - name: my-postgres-db
-          type: postgres-neon
 backend:
-    path: .
+    functions:
+        - entry: dist/src/index.js
+          name: express
+          path: .
+          type: httpServer
     language:
         name: js
         runtime: nodejs20.x
-    functions:
-        - name: express
-          path: .
-          entry: dist/src/index.js
-          type: httpServer
+    path: .
     scripts:
         deploy:
             - npm install
@@ -22,3 +15,10 @@ backend:
         local:
             - npm install
             - npm run build
+name: ecommerce-api
+region: us-east-1
+services:
+    databases:
+        - name: my-postgres-db
+          type: postgres-neon
+yamlVersion: 2
